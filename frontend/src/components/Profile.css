@@ -1,0 +1,293 @@
+/* Profile.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.profile-wrappers {
+    min-height: 100vh;
+    background-color: #8f9096;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+    color: #0646b4;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-info-item {
+    font-size: larger;
+    display: flex;
+    padding: 1rem;
+    background-color: #d0d3d6;
+    border-radius: 8px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    min-width: 150px;
+    color: #0646b4;
+}
+
+.profile-value {
+    color: black;
+    font-weight: 500;
+}
+
+.profile-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: #0646b4;
+}
+
+.profile-no-data {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Password button styles */
+.profile-password-btn {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.profile-password-btn:hover {
+    color: #333;
+}
+
+.back-button {
+    font-size: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 7px;
+    width: 60px;
+    display: flex;
+    /* Add this */
+    justify-content: center;
+    /* Add this */
+    align-items: center;
+    /* This was already there */
+    margin: 0 auto;
+    /*  Add this */
+    /* If you want some space from the top */
+    margin-top: 20px;
+    /* Optional - adjust value as needed */
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    color: white;
+    background-color: rgb(122, 18, 18);
+    transform: scale(1.2);
+    /* Makes the item 5% larger */
+    transition: transform 0.2s ease-in-out;
+    /* Smooth transition */
+}
+
+
+/* OTP Modal styles */
+.otp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.otp-modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.otp-modal h3 {
+    margin: 0 0 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.otp-modal p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #666;
+}
+
+.otp-inputs {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.otp-inputs input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.otp-inputs input:focus {
+    border-color: #007bff;
+}
+
+.otp-error {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.otp-modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.otp-verify-btn,
+.otp-cancel-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.otp-verify-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.otp-verify-btn:hover {
+    background-color: #0056b3;
+}
+
+.otp-verify-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.otp-cancel-btn {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.otp-cancel-btn:hover {
+    background-color: #e2e6ea;
+}
+
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0646b4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 1rem;
+    }
+
+    .profile-info-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .profile-label {
+        min-width: unset;
+    }
+
+    .profile-info-item {
+        flex-wrap: wrap;
+        /* Allows items to wrap on smaller screens */
+    }
+}

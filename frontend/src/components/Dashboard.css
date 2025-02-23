@@ -1,0 +1,311 @@
+/* Dashboard.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.dashboard-container {
+    display: flex;
+    height: 100%; /* Changed from min-height to height */
+    background-color: #cfd1db;
+    overflow: hidden;
+}
+
+.user-profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sidebar Styles */
+.dashboard-sidebar {
+    width: 250px;
+    background-color: #8f9096;
+    padding: 1.5rem;
+    position: fixed; /* Make sidebar fixed */
+    height: 100vh; /* Full viewport height */
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* In case sidebar content is too long */
+    z-index: 1000;
+    
+}
+
+.sidebar-header h2 {
+    padding-left: 30px;
+    font-size: 40px;
+    color: rgb(39, 38, 38);
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-nav li {
+    color: black;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.sidebar-nav li:hover {
+    background-color: #565c64;
+    color: black;
+}
+
+.sidebar-nav li.active {
+    background-color: #444a51;
+    color: white;
+}
+
+.logout-btn {
+    text-decoration: none;
+    display: block;
+    margin-top: 45% ;
+    margin-right: 60px;
+    
+}
+
+.logout-btn li {
+    color: #ff3b30;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 1px 0;
+    font-weight: 600;
+}
+
+.logout-btn li:hover {
+    background-color: transparent !important;
+    color: red;
+    transform: scale(1.05);  /* Makes the item 5% larger */
+    transition: transform 0.2s ease-in-out;  /* Smooth transition */
+}
+
+.logout-btn li:active {
+    transform: scale(0.98);
+}
+
+/* If you want to add an icon */
+.logout-btn li::before {
+    content: "🚪";  /* You can use an icon instead */
+    font-size: 1.1em;
+}
+
+
+.user-profile {
+    width: 60px;
+    /* Adjust size as needed */
+    height: 60px;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin-right: 10px;
+}
+
+.user-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Main Content Styles */
+.dashboard-main {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px; /* Equal to sidebar width */
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section p {
+    font-size: 1.4rem !important;
+    color: #3a3d3e;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+
+}
+
+/* Quick Stats Styles */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    margin: 1.5rem 0rem 1.5rem 1.5rem;
+    width: 75%;
+    background-color: #f0f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover{
+    transform: scale(1.05);  /* Makes the item 5% larger */
+    transition: transform 0.2s ease-in-out;  /* Smooth transition */
+}
+
+.stat-card h3 {
+    color: #3f4647;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .amount {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.trend {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.trend.positive {
+    color: #27ae60;
+    background-color: #e8f5e9;
+}
+
+.trend.negative {
+    color: #e74c3c;
+    background-color: #ffebee;
+}
+
+/* Charts Section Styles */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chart-container {
+    background-color: #f0f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* Recent Transactions Styles */
+.recent-transactions {
+    background-color: #f0f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-info h4 {
+    margin: 0;
+    color: #000000;
+}
+
+.transaction-info p {
+    margin: 0;
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-amount.income {
+    color: #27ae60;
+}
+
+.transaction-amount.expense {
+    color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .dashboard-main {
+        margin-left: 0;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
