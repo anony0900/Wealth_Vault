@@ -22,7 +22,7 @@ from bson import ObjectId
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-app.secret_key = "a27d75d0c288014c4a6adc89e582fbba"
+app.secret_key = ""
 uri = "mongodb+srv://anony:atlas@cluster0.f18iy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 client = MongoClient(uri)
