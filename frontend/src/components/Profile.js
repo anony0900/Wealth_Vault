@@ -24,7 +24,7 @@ const Profile = () => {
 
     const fetchdata = async () => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/api/profile", {
+            const response = await fetch("https://wealth-vault-backend.onrender.com/api/profile", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const Profile = () => {
 
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/create-otp', {
+            const response = await fetch('https://wealth-vault-backend.onrender.com/api/create-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const Profile = () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/verify-otp', {
+            const response = await fetch('https://wealth-vault-backend.onrender.com/api/verify-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

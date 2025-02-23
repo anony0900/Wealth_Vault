@@ -80,7 +80,7 @@ const Login = () => {
   const fetchCaptcha = async () => {
     setIsLoadingCaptcha(true);
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/get-captcha");
+      const response = await fetch("https://wealth-vault-backend.onrender.com/api/get-captcha");
 
       const data = await response.json();
 
@@ -126,7 +126,7 @@ const Login = () => {
 
     try {
       const endpoint = isLogin ? "/api/login" : "/api/signup";
-      const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
+      const response = await fetch(`https://wealth-vault-backend.onrender.com${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ const Login = () => {
 
       if (response.ok && (data.message === "User logged in successfully" || data.message === "User registered successfully")) {
         // Proceed to OTP creation if login/signup was successful
-        const otpResponse = await fetch("http://127.0.0.1:5000/api/create-otp", {
+        const otpResponse = await fetch("https://wealth-vault-backend.onrender.com/api/create-otp", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: formData.email }),

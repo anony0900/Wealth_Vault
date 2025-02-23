@@ -29,7 +29,7 @@ const Transactions = () => {
         const fetchTransactions = async () => {
             try {
                 const email = localStorage.getItem('email');
-                const response = await fetch(`http://localhost:5000/api/transactions?email=${email}`, { method: 'GET' });
+                const response = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions?email=${email}`, { method: 'GET' });
                 const data = await response.json();
 
                 // Check if the response is an array
@@ -157,7 +157,7 @@ const Transactions = () => {
     // Create transaction
     const createTransaction = async (transactionData) => {
         try {
-            const response = await fetch('http://localhost:5000/api/transactions', {
+            const response = await fetch('https://wealth-vault-backend.onrender.com/api/transactions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ const Transactions = () => {
     // Update transaction
     const updateTransaction = async (transactionId, updateData) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/transactions/${transactionId}`, {
+            const response = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions/${transactionId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -206,7 +206,7 @@ const Transactions = () => {
 
     // Get user's transactions
     const getTransactions = async (email) => {
-        const response = await fetch(`http://localhost:5000/api/transactions?email=${email}`);
+        const response = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions?email=${email}`);
         if (!response.ok) {
             throw new Error('Failed to fetch transactions');
         }
@@ -216,7 +216,7 @@ const Transactions = () => {
 
     // Delete transaction
     const deleteTransaction = async (transactionId) => {
-        const response = await fetch(`http://localhost:5000/api/transactions/${transactionId}`, {
+        const response = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions/${transactionId}`, {
             method: 'DELETE'
         });
         if (!response.ok) {

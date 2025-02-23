@@ -65,7 +65,7 @@ const OTPVerification = () => {
     const handleResendOTP = async () => {
         setIsResending(true);
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/create-otp', {
+            const response = await fetch('https://wealth-vault-backend.onrender.com/api/create-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const OTPVerification = () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/verify-otp', {
+            const response = await fetch('https://wealth-vault-backend.onrender.com/api/verify-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

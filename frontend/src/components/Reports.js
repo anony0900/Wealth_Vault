@@ -17,7 +17,7 @@ const Reports = () => {
     const fetchTransactions = async () => {
         try {
             const email = localStorage.getItem('email');
-            const response = await fetch(`http://localhost:5000/api/transactions?email=${email}`);
+            const response = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions?email=${email}`);
             const data = await response.json();
             console.log("Fetched data:", data); // Debug log
             if (Array.isArray(data) && data.length > 0) {

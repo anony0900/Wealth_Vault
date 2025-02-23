@@ -45,7 +45,7 @@ const Dashboard = () => {
                 const email = localStorage.getItem('email');
 
                 // Fetch balance data (POST request)
-                const balanceResponse = await fetch('http://localhost:5000/api/balance', {
+                const balanceResponse = await fetch('https://wealth-vault-backend.onrender.com/api/balance', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Dashboard = () => {
                 }
 
                 // Fetch transactions data (GET request)
-                const transactionsResponse = await fetch(`http://localhost:5000/api/transactions?email=${email}`);
+                const transactionsResponse = await fetch(`https://wealth-vault-backend.onrender.com/api/transactions?email=${email}`);
 
                 const transactionsData = await transactionsResponse.json();
                 // console.log(transactionsResponse.ok)
